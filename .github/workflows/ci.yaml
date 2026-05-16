@@ -1,6 +1,5 @@
 name: Machine Learning Workflow CI
 
-# Alur kerja akan berjalan otomatis setiap ada push ke branch main atau master
 on:
   push:
     branches:
@@ -20,22 +19,16 @@ jobs:
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
-        python-python-version: '3.12.7' # Menyesuaikan rekomendasi lingkungan Dicoding
-
-    # 3. Mengunduh dan mengonfigurasi Miniconda untuk mendukung MLflow Project
-    - name: Setup Conda Environment
-      uses: conda-incubator/setup-miniconda@v3
-      with:
-        auto-update-conda: true
         python-version: '3.12.7'
 
-    # 4. Memasang pustaka dasar yang dibutuhkan oleh runner utama
+    # 3. Memasang pustaka dasar (Tanpa Conda Environment tambahan agar ringkas)
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install mlflow==2.19.0 scikit-learn pandas
 
-    # 5. Menjalankan automated training menggunakan MLflow Project
-    - name: Run MLflow Project Re-training
+    # 4. Menjalankan automated training langsung mengeksekusi modelling.py
+    - name: Run MLflow Training
       run: |
-        mlflow run MLProject --no-conda
+        cd MLProject
+        python modelling.py

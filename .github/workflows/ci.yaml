@@ -24,7 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install mlflow==2.19.0 scikit-learn pandas numpy virtualenv
 
-    # Sesuai instruksi mutlak reviewer, jalankan perintah mlflow run
+    # Perintah mutlak dari reviewer
     - name: Run MLflow Project
       run: |
         mlflow run MLProject --env-manager=local

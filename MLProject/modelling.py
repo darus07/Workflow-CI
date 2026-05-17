@@ -11,7 +11,7 @@ mlflow.autolog()
 def main():
     print("Memulai proses automated training via MLflow...")
     
-    # Memuat dataset Breast Cancer resmi dari Scikit-Learn (Dijamin Bebas Error Path!)
+    # Memuat dataset Breast Cancer resmi dari Scikit-Learn
     data = load_breast_cancer()
     X = data.data
     y = data.target

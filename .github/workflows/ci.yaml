@@ -21,13 +21,13 @@ jobs:
       with:
         python-version: '3.12.7'
 
-    # 3. Memasang seluruh pustaka yang dibutuhkan proses training
+    # 3. Memasang semua pustaka yang dibutuhkan proses training
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install mlflow==2.19.0 scikit-learn pandas numpy virtualenv
 
-    # 4. Menjalankan MLflow Project secara resmi sesuai standar Dicoding
+    # 4. Menjalankan MLflow Project dengan memaksa local backend store uri
     - name: Run MLflow Project
       run: |
-        mlflow run MLProject --env-manager=local
+        mlflow run MLProject --env-manager=local --backend-store-uri ./mlruns

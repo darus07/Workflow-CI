@@ -25,13 +25,13 @@ def main():
     
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
     
-    # Menggunakan Log Manual untuk menghindari konflik subprocess autolog di GitHub Runner
     model = RandomForestClassifier(random_state=42)
     model.fit(X_train, y_train)
     
     predictions = model.predict(X_test)
     acc = accuracy_score(y_test, predictions)
     
+    # Pencatatan manual agar tidak bentrok dengan sub-proses otomatis
     mlflow.log_param("random_state", 42)
     mlflow.log_metric("accuracy", acc)
     mlflow.sklearn.log_model(model, "model")

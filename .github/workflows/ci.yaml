@@ -11,23 +11,20 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Mengunduh kode dari repositori GitHub ke runner
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    # 2. Setup Python di lingkungan GitHub Actions
     - name: Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.12.7'
 
-    # 3. Memasang semua pustaka yang dibutuhkan proses training
     - name: Install Dependencies
       run: |
         python -m pip install --upgrade pip
         pip install mlflow==2.19.0 scikit-learn pandas numpy virtualenv
 
-    # 4. Mengeksekusi MLflow Run dengan standar lingkungan lokal bersih
+    # Sesuai instruksi reviewer, jalankan perintah mlflow run secara standar
     - name: Run MLflow Project
       run: |
         mlflow run MLProject --env-manager=local

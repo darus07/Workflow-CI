@@ -1,0 +1,29 @@
+artifact_path: file:D:/Data E/Dicoding/Fundamental Deep Learning/SMSML_Darussalam/Workflow-CI/mlruns/0/models/m-271a70bc80b14afa8b810c6117692036/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.13.13
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+is_signature_from_type_hint: false
+mlflow_version: 3.12.0
+model_id: m-271a70bc80b14afa8b810c6117692036
+model_size_bytes: 317188
+model_uuid: m-271a70bc80b14afa8b810c6117692036
+prompts: null
+run_id: 1d3c18756a0d4cbc8ff8ab701711647f
+signature:
+  inputs: '[{"type": "tensor", "tensor-spec": {"dtype": "float64", "shape": [-1, 30]}}]'
+  outputs: '[{"type": "tensor", "tensor-spec": {"dtype": "int64", "shape": [-1]}}]'
+  params: null
+type_hint_from_example: false
+utc_time_created: '2026-05-17 09:15:49.897906'

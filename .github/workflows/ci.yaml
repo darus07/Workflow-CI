@@ -24,7 +24,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install mlflow==2.19.0 scikit-learn pandas numpy virtualenv
 
-    # Kita jalankan langsung skrip modelling menggunakan Python di root lingkungan kerja
+    # Sesuai instruksi mutlak reviewer, jalankan perintah mlflow run
     - name: Run MLflow Project
       run: |
-        python MLProject/modelling.py
+        mlflow run MLProject --env-manager=local

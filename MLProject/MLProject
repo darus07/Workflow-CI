@@ -1,6 +1,4 @@
-name: Breast_Cancer_Training
-
-conda_env: conda.yaml
+name: Breast Cancer Tracking Project
 
 entry_points:
   main:

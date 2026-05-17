@@ -31,7 +31,6 @@ def main():
     predictions = model.predict(X_test)
     acc = accuracy_score(y_test, predictions)
     
-    # Pencatatan manual agar tidak bentrok dengan sub-proses otomatis
     mlflow.log_param("random_state", 42)
     mlflow.log_metric("accuracy", acc)
     mlflow.sklearn.log_model(model, "model")

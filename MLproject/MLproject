@@ -1,4 +1,4 @@
-name: Breast Cancer Tracking Project
+name: Breast_Cancer_Project
 
 entry_points:
   main:

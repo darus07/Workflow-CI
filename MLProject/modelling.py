@@ -20,7 +20,7 @@ def main():
     X_test = test_data.drop(columns=['target'])
     y_test = test_data['target']
     
-    with mlflow.start_run(run_name="CI_Automated_Run"):
+with mlflow.start_run(run_name="CI_Automated_Run", nested=True):
         model = RandomForestClassifier(random_state=42)
         model.fit(X_train, y_train)
         print("Automated Training via MLflow Project Berhasil!")

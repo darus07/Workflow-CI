@@ -8,7 +8,6 @@ from sklearn.metrics import accuracy_score
 mlflow.autolog()
 
 def main():
-    # Memuat dataset resmi secara aman di environment runner
     data = load_breast_cancer()
     X = data.data
     y = data.target
@@ -20,7 +19,7 @@ def main():
     
     predictions = model.predict(X_test)
     acc = accuracy_score(y_test, predictions)
-    print(f"Model Training Berhasil. Accuracy: {acc:.4f}")
+    print(f"Model Training Sukses. Accuracy: {acc:.4f}")
 
 if __name__ == "__main__":
     main()

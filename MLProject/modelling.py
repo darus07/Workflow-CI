@@ -7,19 +7,16 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 
-# Aktifkan autolog standar kriteria basic
 mlflow.autolog()
 
 def main():
     csv_filename = "namadataset_preprocessing.csv"
     
-    # Deteksi lokasi dataset secara fleksibel agar anti-gagal di server GitHub
     if os.path.exists(csv_filename):
         df = pd.read_csv(csv_filename)
     elif os.path.exists(os.path.join("MLProject", csv_filename)):
         df = pd.read_csv(os.path.join("MLProject", csv_filename))
     else:
-        # Cadangan otomatis jika file CSV gagal dimuat oleh sub-proses MLflow
         from sklearn.datasets import load_breast_cancer
         data = load_breast_cancer()
         df = pd.DataFrame(data.data, columns=data.feature_names)

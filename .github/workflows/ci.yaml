@@ -24,7 +24,8 @@ jobs:
         python -m pip install --upgrade pip
         pip install mlflow==2.19.0 scikit-learn pandas numpy
 
-    # Tepat seperti instruksi sukses yang ada di forum diskusi
     - name: Run MLflow Project
+      env:
+        MLFLOW_TRACKING_URI: ./mlruns
       run: |
         mlflow run MLProject --env-manager=local

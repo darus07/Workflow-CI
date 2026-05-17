@@ -27,7 +27,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install mlflow==2.19.0 scikit-learn pandas numpy virtualenv
 
-    # 4. Menjalankan MLflow Project dengan memaksa local backend store uri
+    # 4. Mengeksekusi MLflow Run dengan standar lingkungan lokal bersih
     - name: Run MLflow Project
       run: |
-        mlflow run MLProject --env-manager=local --backend-store-uri ./mlruns
+        mlflow run MLProject --env-manager=local

@@ -13,8 +13,8 @@ def main():
     csv_filename = "namadataset_preprocessing.csv"
     if os.path.exists(csv_filename):
         df = pd.read_csv(csv_filename)
-    elif os.path.exists(os.path.join("MLproject", csv_filename)):
-        df = pd.read_csv(os.path.join("MLproject", csv_filename))
+    elif os.path.exists(os.path.join("MLProject", csv_filename)):
+        df = pd.read_csv(os.path.join("MLProject", csv_filename))
     else:
         from sklearn.datasets import load_breast_cancer
         data = load_breast_cancer()
